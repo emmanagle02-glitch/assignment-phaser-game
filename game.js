@@ -2,7 +2,13 @@ const config = {
     type: Phaser.AUTO,
     width: 800,
     height: 600,
+    backgroundColor: '#87CEEB', // forces visible sky color
+    parent: 'game',
     scene: {
+        preload: preload,
+        create: create
+    }
+};
         preload: preload,
         create: create
     }
