@@ -11,7 +11,7 @@ const config = {
 const game = new Phaser.Game(config);
 
 function preload () {
-    this.load.image('sky', 'assets/sky.png');
+    this.load.image('sky', 'assets (folder)/sky.png');
 }
 
 function create () {
