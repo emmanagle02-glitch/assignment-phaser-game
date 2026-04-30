@@ -1,21 +1,19 @@
 const config = {
-    type: Phaser.AUTO,
-    width: 800,
-    height: 600,
-    backgroundColor: '#87CEEB',
-    parent: 'game',
-    scene: {
-        preload: preload,
-        create: create
-    }
+  type: Phaser.AUTO,
+  width: 800,
+  height: 600,
+  backgroundColor: '#87CEEB',
+  parent: 'game',
+  scene: {
+    create: create
+  }
 };
 
 const game = new Phaser.Game(config);
 
-function preload () {
-    this.load.image('sky', 'assets/sky.png');
-}
-
-function create () {
-    this.add.image(400, 300, 'sky');
+function create() {
+  this.add.text(250, 280, 'My Phaser Game Works!', {
+    fontSize: '32px',
+    fill: '#000'
+  });
 }
