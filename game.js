@@ -2,18 +2,33 @@ const config = {
   type: Phaser.AUTO,
   width: 800,
   height: 600,
-  backgroundColor: '#87CEEB',
-  parent: 'game',
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { y: 300 },
+      debug: false
+    }
+  },
   scene: {
-    create: create
+    preload: preload,
+    create: create,
+    update: update
   }
 };
 
 const game = new Phaser.Game(config);
 
-function create() {
-  this.add.text(250, 280, 'My Phaser Game Works!', {
-    fontSize: '32px',
-    fill: '#000'
-  });
-}
+let player;
+let stars;
+let bombs;
+let platforms;
+let cursors;
+let score = 0;
+let scoreText;
+let gameOver = false;
+
+function preload() {
+  this.load.image('sky', 'assets/sky.png');
+  this.load.image('ground', 'assets/platform.png');
+  this
+ 
